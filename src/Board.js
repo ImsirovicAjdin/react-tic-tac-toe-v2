@@ -22,6 +22,10 @@ function Board() {
     );
   }
 
+  function restartGame() {
+    setSquares(Array(9).fill(null));
+  }
+
   return (
     <div>
       <h1>Tic-Tac-Toe</h1>
@@ -36,6 +40,9 @@ function Board() {
         {renderSquare(7)}
         {renderSquare(8)}
       </div>
+      <button onClick={() => restartGame()}>
+        Restart Game
+      </button>
     </div>
   );
 }
