@@ -29,6 +29,7 @@ function Board() {
   return (
     <div>
       <h1>Tic-Tac-Toe</h1>
+      <p>Next player: {xIsNext ? 'X' : 'O'}</p>
       <div className="board">
         {renderSquare(0)}
         {renderSquare(1)}
