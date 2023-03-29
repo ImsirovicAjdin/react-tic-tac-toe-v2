@@ -8,20 +8,23 @@ h1 {
 }
 
 .board {
-  display: inline-block;
-  margin-top: 20px;
+  display: grid;
+  width: 102px;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  
 }
 
 .square {
   background-color: #fff;
   border: 1px solid #999;
-  float: left;
+  
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
   height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
+  
   padding: 0;
   text-align: center;
   width: 34px;
@@ -29,12 +32,6 @@ h1 {
 
 .square:focus {
   outline: none;
-}
-
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
 }
 
 .status {
