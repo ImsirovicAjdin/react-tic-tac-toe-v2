@@ -22,9 +22,10 @@ function Board() {
       const [a,b,c] = WINNING_COMBINATIONS[i];
       console.warn(a,b,c);
       if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-        console.log(squares[a]);
+        return(squares[a]);
       }
     }
+    return null;
   }
 
   function handleClick(i) {
