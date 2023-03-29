@@ -20,8 +20,9 @@ function Board() {
   function calculateWinner(squares) {
     for (let i = 0; i < WINNING_COMBINATIONS.length; i++) {
       const [a,b,c] = WINNING_COMBINATIONS[i];
-      console.warn(a,b,c);
+      //console.warn(a,b,c);
       if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+        console.log(squares[a]);
         return(squares[a]);
       }
     }
@@ -30,11 +31,13 @@ function Board() {
 
   function handleClick(i) {
     const newSquares = [...squares];
+    if (newSquares[i] || calculateWinner(newSquares)) {
+      return;
+    }
     newSquares[i] = xIsNext ? 'X' : 'O';
     setSquares(newSquares);
     setXIsNext(!xIsNext);
 
-    calculateWinner(newSquares);
   }
 
   function renderSquare(i) {
