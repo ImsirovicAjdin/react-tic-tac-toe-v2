@@ -4,6 +4,7 @@ import Square from './Square';
 function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
+  const[winner, setWinner] = useState(null);
   console.log(squares);
 
   const WINNING_COMBINATIONS = [
@@ -32,7 +33,7 @@ function Board() {
   function handleClick(i) {
     const newSquares = [...squares];
     if (newSquares[i] || calculateWinner(newSquares)) {
-      return;
+      setWinner(calculateWinner(newSquares));
     }
     newSquares[i] = xIsNext ? 'X' : 'O';
     setSquares(newSquares);
@@ -56,6 +57,7 @@ function Board() {
   return (
     <div>
       <h1>Tic-Tac-Toe</h1>
+      <h2>{winner}</h2>
       <p>Next player: {xIsNext ? 'X' : 'O'}</p>
       <div className="board">
         {renderSquare(0)}
