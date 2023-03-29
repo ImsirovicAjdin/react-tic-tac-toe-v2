@@ -21,6 +21,7 @@ function Board() {
     for (let i = 0; i < WINNING_COMBINATIONS.length; i++) {
       const [a,b,c] = WINNING_COMBINATIONS[i];
       console.warn(a,b,c);
+      console.log(squares[a], squares[b], squares[c]);
     }
   }
 
