@@ -16,7 +16,7 @@ function Board() {
   function renderSquare(i) {
     return (
       <Square
-        value={squares[i] + 1}
+        value={squares[i]}
         onClick={() => handleClick(i) }
       />
     );
